@@ -73,9 +73,16 @@ sorted_char_count = dict(sorted(char_count.items()))
 print("Character occurrances:")
 for char, count in sorted_char_count.items():
     print(f"{char}:{count}")
+        
+most_occured = ("a")
+least_occured = ("a")
 
-most_occured = max(sorted_char_count, key = sorted_char_count.get)
-least_occured = min(sorted_char_count, key = sorted_char_count.get)
+for key in char_count.keys():
+    if char_count[key]> char_count[most_occured]:
+        most_occured = key
+    if char_count[key]< char_count[least_occured]:
+        least_occured = key
+
 print(f"The letter that occured the most is '{most_occured}' with {sorted_char_count[most_occured]} occurrances.")
 print(f"The letter that occured the least is '{least_occured}' with {sorted_char_count[least_occured]} occurrances.")
 
